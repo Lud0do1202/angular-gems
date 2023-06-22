@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { MenuXConfig } from '../../../api/menu-x-config';
+import { MenuXConfig } from '../../../../api/menu-x-config';
 
 @Component({
   selector: 'gems-menu-x',
