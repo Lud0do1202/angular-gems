@@ -1,0 +1,7 @@
+{
+  "$schema": "../../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../../dist/lud0do1202/angular-gems",
+  "lib": {
+    "entryFile": "src/public-api.ts"
+  }
+}

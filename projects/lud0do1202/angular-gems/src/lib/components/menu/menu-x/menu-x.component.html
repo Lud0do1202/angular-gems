@@ -1,0 +1,39 @@
+<!-- Nav -->
+<nav
+  [ngStyle]="{
+    'background-color': config.style!.bgColor,
+    border: config.style!.border,
+    'border-radius': config.style!.borderRadius,
+    'font-size': config.style!.fontSize
+  }"
+>
+  <ul>
+    <!-- Electron link -->
+    <li
+      class="electron-link"
+      [ngStyle]="{
+        width, 
+        'transform' : translateYElectron, 
+        'background-color' : config.style!.activeBgColor, 
+        'border-radius': config.style!.borderRadius,
+        'transition' : config.style!.transition
+    }"
+    >
+      <a></a>
+    </li>
+
+    <!-- Links -->
+    <li *ngFor="let link of config.links; let i = index" [ngStyle]="{width}">
+      <a
+        (click)="click(i)"
+        [class.active]="config.activeLink === i"
+        [ngStyle]="{
+          padding: config.style!.paddingY + ' 0',
+          color: config.activeLink === i ? config.style!.activeFontColor : config.style!.fontColor
+        }"
+      >
+        {{ link.label }}
+      </a>
+    </li>
+  </ul>
+</nav>
