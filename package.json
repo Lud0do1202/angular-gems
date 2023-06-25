@@ -1,12 +1,13 @@
 {
   "name": "angular-gems",
-  "version": "1.0.0",
+  "version": "1.0.8",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build-prod" : "ng build --configuration production",
+    "publish": "ng build --configuration production && npm run build-scss && cd dist/lud0do1202/angular-gems/ && npm publish",
     "watch": "ng build --watch --configuration development",
+    "build-scss": "node-sass --output-style compressed --source-map true -o dist/lud0do1202/angular-gems/styles/ projects/lud0do1202/angular-gems/src/styles/gems-light.scss",
     "test": "ng test"
   },
   "private": true,
@@ -35,6 +36,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "ng-packagr": "^16.1.0",
+    "node-sass": "^9.0.0",
     "typescript": "~5.1.3"
   }
 }

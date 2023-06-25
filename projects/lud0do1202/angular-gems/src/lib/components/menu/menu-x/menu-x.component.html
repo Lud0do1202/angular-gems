@@ -1,38 +1,23 @@
 <!-- Nav -->
-<nav
-  [ngStyle]="{
-    'background-color': config.style!.bgColor,
-    border: config.style!.border,
-    'border-radius': config.style!.borderRadius,
-    'font-size': config.style!.fontSize
-  }"
->
-  <ul>
+<nav [id]="styleId" class="gems-menu-x">
+  <ul class="gems-links">
     <!-- Electron link -->
     <li
-      class="electron-link"
-      [ngStyle]="{
-        width, 
-        'transform' : translateYElectron, 
-        'background-color' : config.style!.activeBgColor, 
-        'border-radius': config.style!.borderRadius,
-        'transition' : config.style!.transition
-    }"
+      [ngClass]="'gems-electron-link gems-link gems-link-' + activeLink"
+      [ngStyle]="{ width: widthLink, transform: translateElectronLink }"
     >
-      <a></a>
+      <a class="gems-link-text"></a>
     </li>
 
     <!-- Links -->
-    <li *ngFor="let link of config.links; let i = index" [ngStyle]="{width}">
-      <a
-        (click)="click(i)"
-        [class.active]="config.activeLink === i"
-        [ngStyle]="{
-          padding: config.style!.paddingY + ' 0',
-          color: config.activeLink === i ? config.style!.activeFontColor : config.style!.fontColor
-        }"
-      >
-        {{ link.label }}
+    <li
+      *ngFor="let link of links; let i = index"
+      [ngClass]="'gems-link gems-link-' + i"
+      [class.active]="activeLink === i"
+      [ngStyle]="{ width: widthLink }"
+    >
+      <a (click)="click(i)" class="gems-link-text">
+        {{ link }}
       </a>
     </li>
   </ul>

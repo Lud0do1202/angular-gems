@@ -1,32 +1,56 @@
-nav {
+// nav
+.gems-menu-x {
   width: 100%;
-  ul {
+  background-color: var(--gems-color-4);
+  border: 1px solid var(--gems-color-3);
+  border-radius: var(--gems-border-radius-xl);
+  font-size: 1.75rem;
+
+  // nav ul
+  .gems-links {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     width: 100%;
     margin: 0;
     padding: 0;
     position: relative;
-    li {
+
+    // nav ul li
+    .gems-link {
       z-index: 2;
       text-align: center;
       list-style-type: none;
-      &.electron-link {
+
+      // nav ul li.electron
+      &.gems-electron-link {
         z-index: 1;
         position: absolute;
         top: 0;
         left: 0;
         height: 100%;
+        background-color: var(--gems-color-1);
+        border-radius: var(--gems-border-radius-xl);
+        transition: 0.5s;
       }
-      a {
+
+      // nav ul li a
+      .gems-link-text {
         display: block;
         text-decoration: none;
-        transition: 0.2s;
+        padding: 0.5rem 0;
+        color: var(--gems-color-1);
+        transition: 0.25s;
         &:hover {
           cursor: pointer;
-          &:not(.active) {
-            opacity: 50%;
-          }
+          opacity: 50%;
+        }
+      }
+
+      // nav ul li.active
+      &.active {
+        .gems-link-text {
+          color: var(--gems-color-5);
         }
       }
     }
