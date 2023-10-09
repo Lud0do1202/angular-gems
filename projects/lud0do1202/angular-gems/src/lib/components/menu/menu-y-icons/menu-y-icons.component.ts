@@ -1,15 +1,15 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
-  selector: 'gems-menu-x',
-  templateUrl: './menu-x.component.html',
-  styleUrls: ['./menu-x.component.scss'],
+  selector: 'gems-menu-y-icons',
+  templateUrl: './menu-y-icons.component.html',
+  styleUrls: ['./menu-y-icons.component.scss'],
 })
-export class MenuXComponent implements OnInit {
+export class MenuYIconsComponent implements OnInit {
   // Event link clicked
   @Output() onLinkClicked = new EventEmitter<number>();
 
-  // Links
+  // Links (icons)
   @Input() links: string[] = [];
 
   // Active link
@@ -21,18 +21,18 @@ export class MenuXComponent implements OnInit {
 
   // Dynamic style
   translateElectronLink!: string;
-  widthLink!: string;
+  heightLink!: string;
 
   /******************************************************************************/
   ngOnInit(): void {
     // Default active link
     this.activeLink = this.default;
 
-    // Width
-    this.widthLink = `calc(100% / ${this.links.length})`;
+    // Height link
+    this.heightLink = `calc(100%/${this.links.length})`;
 
     // Translate electron link
-    this.translateElectronLink = `translateX(${this.activeLink! * 100}%)`;
+    this.translateElectronLink = `translateY(${this.activeLink! * 100}%)`;
   }
 
   /******************************************************************************/
@@ -44,6 +44,6 @@ export class MenuXComponent implements OnInit {
     this.activeLink = index;
 
     // Translate electron link
-    this.translateElectronLink = `translateX(${this.activeLink! * 100}%)`;
+    this.translateElectronLink = `translateY(${this.activeLink! * 100}%)`;
   }
 }

@@ -1,4 +1,4 @@
-// nav
+// <nav> : menu-x
 .gems-menu-x {
   width: 100%;
   background-color: var(--gems-color-4);
@@ -6,8 +6,8 @@
   border-radius: var(--gems-border-radius-xl);
   font-size: 1.75rem;
 
-  // nav ul
-  .gems-links {
+  // <ul> : list of the links
+  .gems-list {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -16,14 +16,14 @@
     padding: 0;
     position: relative;
 
-    // nav ul li
-    .gems-link {
+    // <li> : one item of the list
+    .gems-item {
       z-index: 2;
       text-align: center;
       list-style-type: none;
 
-      // nav ul li.electron
-      &.gems-electron-link {
+      // <li class="gems-electron-item"> : the item which move
+      &.gems-electron-item {
         z-index: 1;
         position: absolute;
         top: 0;
@@ -34,8 +34,15 @@
         transition: 0.5s;
       }
 
-      // nav ul li a
-      .gems-link-text {
+      // <li class="active"> : The item which is related to the active link
+      &.active {
+        .gems-link {
+          color: var(--gems-color-5);
+        }
+      }
+
+      // <a> : The link of an item
+      .gems-link {
         display: block;
         text-decoration: none;
         padding: 0.5rem 0;
@@ -44,13 +51,6 @@
         &:hover {
           cursor: pointer;
           opacity: 50%;
-        }
-      }
-
-      // nav ul li.active
-      &.active {
-        .gems-link-text {
-          color: var(--gems-color-5);
         }
       }
     }

@@ -1,6 +1,6 @@
 {
   "name": "@lud0do1202/angular-gems",
-  "version": "1.0.8",
+  "version": "1.2.0",
   "author": "Lud0do1202",
   "peerDependencies": {
     "@angular/common": "^16.1.0",
@@ -15,5 +15,12 @@
     "type": "git",
     "url": "https://github.com/Lud0do1202/angular-gems.git"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "angular",
+    "gems",
+    "components",
+    "menu",
+    "icons"
+  ]
 }

@@ -1,12 +1,12 @@
 <!-- Nav -->
-<nav [id]="styleId" class="gems-menu-x">
+<nav [id]="styleId" class="gems-menu-y-icons">
   <ul class="gems-list">
     <!-- Electron link -->
     <li
       [ngClass]="'gems-item gems-electron-item gems-item-' + activeLink"
-      [ngStyle]="{ width: widthLink, transform: translateElectronLink }"
+      [ngStyle]="{ height: heightLink, transform: translateElectronLink }"
     >
-      <a class="gems-link"></a>
+      <a class="gems-link"> </a>
     </li>
 
     <!-- Links -->
@@ -14,10 +14,10 @@
       *ngFor="let link of links; let i = index"
       [ngClass]="'gems-item gems-item-' + i"
       [class.active]="activeLink === i"
-      [ngStyle]="{ width: widthLink }"
+      [ngStyle]="{ height: heightLink }"
     >
       <a (click)="click(i)" class="gems-link">
-        {{ link }}
+        <i [class]="'gems-icon ' + link"></i>
       </a>
     </li>
   </ul>
