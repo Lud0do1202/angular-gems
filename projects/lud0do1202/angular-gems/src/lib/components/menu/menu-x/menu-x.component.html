@@ -1,17 +1,19 @@
-<!-- Nav -->
-<nav [id]="styleId" class="gems-menu-x">
+<!-- ======================================================================= -->
+<!--                                 MENU X                                  -->
+<!-- ======================================================================= -->
+<nav [id]="config.styleId" class="gems-menu-x">
   <ul class="gems-list">
-    <!-- Electron link -->
+    <!-- -------------------------- Electron Link -------------------------- -->
     <li
       [ngClass]="'gems-item gems-electron-item gems-item-' + activeLink"
-      [ngStyle]="{ width: widthLink, transform: translateElectronLink }"
+      [ngStyle]="{ width: widthLink, transform: this.translateElectronLink }"
     >
       <a class="gems-link"></a>
     </li>
 
-    <!-- Links -->
+    <!-- ------------------------------ Links ------------------------------ -->
     <li
-      *ngFor="let link of links; let i = index"
+      *ngFor="let link of config.links; let i = index"
       [ngClass]="'gems-item gems-item-' + i"
       [class.active]="activeLink === i"
       [ngStyle]="{ width: widthLink }"

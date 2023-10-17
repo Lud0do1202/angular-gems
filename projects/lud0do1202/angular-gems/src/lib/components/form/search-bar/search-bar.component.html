@@ -1,0 +1,33 @@
+<!-- ======================================================================= -->
+<!--                               SEARCH BAR                                -->
+<!-- ======================================================================= -->
+<div class="gems-search-bar">
+  <!-- ---------------------------- Label Left ----------------------------- -->
+  <label
+    *ngIf="config.icon && config.iconPosition === 'left'"
+    for="search-bar"
+    class="gems-label-search-bar"
+    style="padding-right: 0"
+    ><i [class]="'gems-icon-search-bar ' + config.icon"></i
+  ></label>
+
+  <!-- ------------------------------- Input ------------------------------- -->
+  <input
+    type="text"
+    id="search-bar"
+    class="gems-input-search-bar"
+    [(ngModel)]="value"
+    [placeholder]="config.placeholder"
+    (ngModelChange)="onChangeEmit(true)"
+    (change)="onChangeEmit(false)"
+  />
+
+  <!-- ---------------------------- Label Right ---------------------------- -->
+  <label
+    *ngIf="config.icon && config.iconPosition === 'right'"
+    for="search-bar"
+    class="gems-label-search-bar"
+    style="padding-left: 0"
+    ><i [class]="'gems-icon-search-bar ' + config.icon"></i
+  ></label>
+</div>

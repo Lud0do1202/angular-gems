@@ -1,4 +1,6 @@
-// <nav> : menu-x
+/* ========================================================================== */
+/*                                   MENU X                                   */
+/* ========================================================================== */
 .gems-menu-x {
   width: 100%;
   background-color: var(--gems-color-4);
@@ -6,7 +8,7 @@
   border-radius: var(--gems-border-radius-xl);
   font-size: 1.75rem;
 
-  // <ul> : list of the links
+  /* --------------------------------- <ul> --------------------------------- */
   .gems-list {
     display: flex;
     justify-content: space-around;
@@ -16,13 +18,13 @@
     padding: 0;
     position: relative;
 
-    // <li> : one item of the list
+    /* -------------------------------- <li> -------------------------------- */
     .gems-item {
       z-index: 2;
       text-align: center;
       list-style-type: none;
 
-      // <li class="gems-electron-item"> : the item which move
+      /* ------------------ <li class="gems-electron-item"> ----------------- */
       &.gems-electron-item {
         z-index: 1;
         position: absolute;
@@ -34,20 +36,23 @@
         transition: 0.5s;
       }
 
-      // <li class="active"> : The item which is related to the active link
+      /* ------------------------ <li class="active"> ----------------------- */
       &.active {
+        /* ------------------------------- <a> ------------------------------ */
         .gems-link {
           color: var(--gems-color-5);
         }
       }
 
-      // <a> : The link of an item
+      /* -------------------------------- <a> ------------------------------- */
       .gems-link {
         display: block;
         text-decoration: none;
         padding: 0.5rem 0;
         color: var(--gems-color-1);
         transition: 0.25s;
+
+        // Hover
         &:hover {
           cursor: pointer;
           opacity: 50%;

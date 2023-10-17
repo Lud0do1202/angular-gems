@@ -1,42 +1,77 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MenuYIconsConfig } from './menu-y-icons-config';
 
+/**
+ * @help https://www.google.com
+ * @author Lud0do1202
+ * @date 17 October 2023
+ */
 @Component({
   selector: 'gems-menu-y-icons',
   templateUrl: './menu-y-icons.component.html',
   styleUrls: ['./menu-y-icons.component.scss'],
 })
 export class MenuYIconsComponent implements OnInit {
-  // Event link clicked
+  /* -------------------------------- Output -------------------------------- */
+  /**
+   * The event emited when a link is clicked
+   */
   @Output() onLinkClicked = new EventEmitter<number>();
 
-  // Links (icons)
-  @Input() links: string[] = [];
+  /* ----------------------------- Configuration ---------------------------- */
+  /**
+   * The default configuration
+   */
+  private static _default: MenuYIconsConfig = {
+    links: [],
+    defaultActiveLink: 0,
+    styleId: '',
+  };
+  /**
+   * The configuration for the menu-x component
+   */
+  @Input() config!: MenuYIconsConfig;
 
-  // Active link
-  @Input() default: number = 0;
-  activeLink!: number;
+  /* ------------------------------ Navigation ------------------------------ */
+  /**
+   * The active link
+   */
+  protected activeLink!: number;
 
-  // Style id
-  @Input() styleId: string = '';
+  /* ----------------------------- Dynamic Style ---------------------------- */
+  /**
+   * The value of transform : translateX(...%)
+   */
+  protected translateElectronLink!: string;
+  /**
+   * The width of a link
+   */
+  protected heightLink!: string;
 
-  // Dynamic style
-  translateElectronLink!: string;
-  heightLink!: string;
-
-  /******************************************************************************/
+  /* --------------------------------- Init --------------------------------- */
   ngOnInit(): void {
+    // Config
+    this.config = { ...MenuYIconsComponent._default, ...this.config };
+
     // Default active link
-    this.activeLink = this.default;
+    this.activeLink = this.config.defaultActiveLink;
 
     // Height link
-    this.heightLink = `calc(100%/${this.links.length})`;
+    this.heightLink = `calc(100% / ${this.config.links.length})`;
 
     // Translate electron link
-    this.translateElectronLink = `translateY(${this.activeLink! * 100}%)`;
+    this.translateElectronLink = `translateY(${this.activeLink * 100}%)`;
   }
 
-  /******************************************************************************/
+  /* --------------------------------- Click -------------------------------- */
+  /**
+   * Event emit when a new link is clicked
+   * @param index The index of the link clicked
+   */
   click(index: number): void {
+    // Stop if same link clicked
+    if (index === this.activeLink) return;
+
     // Emit
     this.onLinkClicked.emit(index);
 
@@ -44,6 +79,6 @@ export class MenuYIconsComponent implements OnInit {
     this.activeLink = index;
 
     // Translate electron link
-    this.translateElectronLink = `translateY(${this.activeLink! * 100}%)`;
+    this.translateElectronLink = `translateY(${this.activeLink * 100}%)`;
   }
 }

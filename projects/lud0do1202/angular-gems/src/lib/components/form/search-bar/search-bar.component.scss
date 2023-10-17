@@ -1,0 +1,42 @@
+/* ========================================================================== */
+/*                                 SEARCH BAR                                 */
+/* ========================================================================== */
+.gems-search-bar {
+  display: flex;
+  border: 2px solid var(--gems-color-2);
+  border-radius: var(--gems-border-radius-s);
+  color: var(--gems-color-2);
+
+  // Input focused
+  &:focus-within {
+    border: 2px solid var(--gems-color-1);
+    outline: 1px solid var(--gems-color-1);
+    color: var(--gems-color-1);
+  }
+
+  /* -------------------------------- <label> ------------------------------- */
+  .gems-label-search-bar {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
+
+  /* -------------------------------- <input> ------------------------------- */
+  .gems-input-search-bar {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: var(--gems-border-radius-s);
+    color: var(--gems-color-2);
+
+    // Placeholder
+    &::placeholder {
+      color: var(--gems-placeholder-color);
+    }
+
+    // Focus
+    &:focus {
+      outline: none;
+      color: var(--gems-color-1);
+    }
+  }
+}
