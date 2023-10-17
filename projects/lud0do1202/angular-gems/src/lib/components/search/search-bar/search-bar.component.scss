@@ -3,6 +3,7 @@
 /* ========================================================================== */
 .gems-search-bar {
   display: flex;
+  width: fit-content;
   border: 2px solid var(--gems-color-2);
   border-radius: var(--gems-border-radius-s);
   color: var(--gems-color-2);
