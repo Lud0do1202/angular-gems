@@ -5,7 +5,7 @@
  */
 export interface MenuXConfig {
   /**
-   * The name of the links
+   * The labels of the links
    */
   links: string[];
 
