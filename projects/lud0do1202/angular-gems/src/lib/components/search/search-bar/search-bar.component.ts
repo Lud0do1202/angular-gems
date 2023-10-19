@@ -30,6 +30,7 @@ export class SearchBarComponent implements OnInit {
     iconPosition: 'left',
     placeholder: 'Search',
     dynamicFilter: true,
+    styleId: '',
   };
   /**
    * The configuration for the search-bar component

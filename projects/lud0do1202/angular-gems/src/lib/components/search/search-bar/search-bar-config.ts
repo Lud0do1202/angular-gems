@@ -37,4 +37,10 @@ export interface SearchBarConfig {
    * If the filter function emit every time the value change (onModelChange) or when the value has been changed (onChange)
    */
   dynamicFilter?: boolean;
+
+  /**
+   * The id css for the component
+   * @info It can be used several times
+   */
+  styleId?: string;
 }

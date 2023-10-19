@@ -1,13 +1,12 @@
 <!-- ======================================================================= -->
 <!--                               SEARCH BAR                                -->
 <!-- ======================================================================= -->
-<div class="gems-search-bar">
+<div [id]="config.styleId" class="gems-search-bar">
   <!-- ---------------------------- Label Left ----------------------------- -->
   <label
     *ngIf="config.icon && config.iconPosition === 'left'"
     for="search-bar"
-    class="gems-label-search-bar"
-    style="padding-right: 0"
+    class="gems-label-search-bar gems-label-search-bar-left"
     ><i [class]="'gems-icon-search-bar ' + config.icon"></i
   ></label>
 
@@ -26,8 +25,7 @@
   <label
     *ngIf="config.icon && config.iconPosition === 'right'"
     for="search-bar"
-    class="gems-label-search-bar"
-    style="padding-left: 0"
+    class="gems-label-search-bar gems-label-search-bar-right"
     ><i [class]="'gems-icon-search-bar ' + config.icon"></i
   ></label>
 </div>

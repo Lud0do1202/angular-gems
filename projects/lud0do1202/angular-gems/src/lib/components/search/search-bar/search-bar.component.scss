@@ -19,6 +19,16 @@
   .gems-label-search-bar {
     font-size: 1.5rem;
     padding: 0.5rem;
+
+    /* ------------- <label class="gems-label-search-bar-left"> ------------- */
+    &.gems-label-search-bar-left {
+      padding-right: 0;
+    }
+
+    /* ------------- <label class="gems-label-search-bar-right"> ------------ */
+    &.gems-label-search-bar-right {
+      padding-left: 0;
+    }
   }
 
   /* -------------------------------- <input> ------------------------------- */
