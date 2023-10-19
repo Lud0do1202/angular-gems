@@ -14,7 +14,8 @@ import { SearchBarConfig } from './search-bar-config';
 export class SearchBarComponent implements OnInit {
   /* -------------------------------- Output -------------------------------- */
   /**
-   * The event emited every time it filters
+   * The event emited every time the function filter is called (dynamicFilter)
+   * @returns the items filtered
    */
   @Output() filtered = new EventEmitter();
 
@@ -30,7 +31,7 @@ export class SearchBarComponent implements OnInit {
     iconPosition: 'left',
     placeholder: 'Search',
     dynamicFilter: true,
-    styleId: '',
+    styleId: undefined,
   };
   /**
    * The configuration for the search-bar component

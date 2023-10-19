@@ -15,6 +15,7 @@ export class MenuXComponent implements OnInit {
   /* -------------------------------- Output -------------------------------- */
   /**
    * The event emited when a link is clicked
+   * @returns the index of link clicked
    */
   @Output() onLinkClicked = new EventEmitter<number>();
 
@@ -25,7 +26,7 @@ export class MenuXComponent implements OnInit {
   private static _default: MenuXConfig = {
     links: [],
     defaultActiveLink: 0,
-    styleId: '',
+    styleId: undefined,
   };
   /**
    * The configuration for the menu-x component

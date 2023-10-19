@@ -1,7 +1,7 @@
 <!-- ======================================================================= -->
 <!--                               SEARCH BAR                                -->
 <!-- ======================================================================= -->
-<div [id]="config.styleId" class="gems-search-bar">
+<div [id]="config.styleId ?? ''" class="gems-search-bar">
   <!-- ---------------------------- Label Left ----------------------------- -->
   <label
     *ngIf="config.icon && config.iconPosition === 'left'"
