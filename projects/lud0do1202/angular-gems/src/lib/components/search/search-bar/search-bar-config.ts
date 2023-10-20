@@ -1,7 +1,7 @@
 /**
- * @help https://www.google.com
+ * @help https://angular-gems.web.app/components/search/search-bar
  * @author Lud0do1202
- * @date 17 October 2023
+ * @date 20 October 2023
  */
 export interface SearchBarConfig {
   /**

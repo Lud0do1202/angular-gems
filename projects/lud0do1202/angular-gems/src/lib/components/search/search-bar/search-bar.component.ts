@@ -2,9 +2,9 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { SearchBarConfig } from './search-bar-config';
 
 /**
- * @help https://www.google.com
+ * @help https://angular-gems.web.app/components/search/search-bar
  * @author Lud0do1202
- * @date 17 October 2023
+ * @date 20 October 2023
  */
 @Component({
   selector: 'gems-search-bar',
