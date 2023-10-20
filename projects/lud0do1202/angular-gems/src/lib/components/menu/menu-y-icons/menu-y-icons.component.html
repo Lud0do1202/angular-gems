@@ -13,13 +13,13 @@
 
     <!-- ------------------------------ Links ------------------------------ -->
     <li
-      *ngFor="let link of config.links; let i = index"
+      *ngFor="let icon of config.icons; let i = index"
       [ngClass]="'gems-item gems-item-' + i"
       [class.active]="activeLink === i"
       [ngStyle]="{ height: heightLink }"
     >
       <a (click)="click(i)" class="gems-link">
-        <i [class]="'gems-icon ' + link"></i>
+        <i [class]="'gems-icon ' + icon"></i>
       </a>
     </li>
   </ul>

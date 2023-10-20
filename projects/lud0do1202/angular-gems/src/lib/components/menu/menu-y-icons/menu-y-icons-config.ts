@@ -5,9 +5,9 @@
  */
 export interface MenuYIconsConfig {
   /**
-   * The labels of the links
+   * The icons of the links
    */
-  links: string[];
+  icons: string[];
 
   /**
    * The default link which is active
