@@ -24,7 +24,7 @@ export class MenuYIconsComponent implements OnInit {
    * The default configuration
    */
   private static _default: MenuYIconsConfig = {
-    links: [],
+    icons: [],
     defaultActiveLink: 0,
     styleId: undefined,
   };
@@ -58,7 +58,7 @@ export class MenuYIconsComponent implements OnInit {
     this.activeLink = this.config.defaultActiveLink;
 
     // Height link
-    this.heightLink = `calc(100% / ${this.config.links.length})`;
+    this.heightLink = `calc(100% / ${this.config.icons.length})`;
 
     // Translate electron link
     this.translateElectronLink = `translateY(${this.activeLink * 100}%)`;
